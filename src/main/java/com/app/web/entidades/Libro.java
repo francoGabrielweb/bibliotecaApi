@@ -13,40 +13,26 @@ import java.util.Date;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "libros")
 public class Libro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private   Long  isbn  ;
 
+
+    @ManyToOne // Puedes necesitar ajustar esto según la relación real
+    private Autor autor;
+
+    @ManyToOne // Puedes necesitar ajustar esto según la relación real
+    private Editorial editorial;
+
     private String  titulo ;
-
-    //private Autor  autor;
-
-
-    //private Editorial  editorial ;
-
-
     private String edicion ;
-
-
     private Date fechaPublicacion ;
-
-
     private int  paginas ;
-
-
-    private String  idiomas ;
-
+    private String idiomas ;
     private String genero  ;
-
-
     private String estado ;
-
-
-
-
-
-
 
 }
